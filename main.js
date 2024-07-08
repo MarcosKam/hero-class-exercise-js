@@ -1,26 +1,36 @@
-function tierCalculate(wonMatchesCount, lostMatchesCount) {
-  let matchBalance = wonMatchesCount - lostMatchesCount;
-  let tier;
-
-  if (matchBalance <= 10) {
-    tier = "Iron";
-  } else if (matchBalance <= 20) {
-    tier = "Bronze";
-  } else if (matchBalance <= 50) {
-    tier = "Silver";
-  } else if (matchBalance <= 80) {
-    tier = "Gold";
-  } else if (matchBalance <= 90) {
-    tier = "Diamond";
-  } else if (matchBalance <= 100) {
-    tier = "Legendary";
-  } else {
-    tier = "Immortal";
+class Hero {
+  constructor(name, age, heroClass) {
+    this.name = name;
+    this.age = age;
+    this.heroClass = heroClass;
   }
 
-  console.log(
-    `Hero's match balance is ${matchBalance}, so the tier is ${tier}`
-  );
+  attack() {
+    let attackType;
+
+    switch (this.heroClass) {
+      case "mage":
+        attackType = "magic";
+        break;
+      case "warrior":
+        attackType = "sword";
+        break;
+      case "monk":
+        attackType = "martial arts";
+        break;
+      case "ninja":
+        attackType = "shuriken";
+        break;
+      default:
+        attackType = "unknown";
+    }
+
+    console.log(`The ${this.heroClass} attacked with ${attackType}`);
+  }
 }
 
-tierCalculate(65, 13);
+let firstHero = new Hero("Ragi", 23, "mage");
+let secondHero = new Hero("Alys", 18, "warrior");
+
+firstHero.attack();
+secondHero.attack();
