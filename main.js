@@ -29,6 +29,7 @@ class Hero {
   }
 }
 
+// Possible classes: "mage", "warrior", "monk" and "ninja"
 let firstHero = new Hero("Ragi", 23, "mage");
 let secondHero = new Hero("Alys", 18, "warrior");
 
